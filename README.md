@@ -1,86 +1,110 @@
-🚀 By-LeyzS Arch + Hyprland Dotfiles (V1.0) 🏁
-🚨 IMPORTANT: MUST INSTALL FIRST
+# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V1.0)** 🏁  
 
-👉 Before copying the files, install these packages so the system works with ALL features (colors, notifications, wallpapers, etc.)
+---
 
-⚙️ Core Components & Visuals
+## 🚨 **IMPORTANT: MUST INSTALL FIRST**
 
+> ⚠️ **Before copying the files, you MUST install these packages!**  
+> Otherwise, the system will NOT work properly.
+
+---
+
+### ⚙️ **Core Components & Visuals**
+```bash
 sudo pacman -S hyprland waybar wofi wlogout kitty fastfetch swww swaync hyprlock pywal16 mpvpaper grim slurp wl-clipboard
+```
 
-🔤 Fonts & Tools
-
+### 🔤 **Fonts & Tools**
+```bash
 yay -S matugen-bin ttf-jetbrains-mono-nerd
+```
 
-🖼️ WALLPAPER MANAGEMENT
+---
 
-✨ Static Picker (WIN + W)
-→ Pick an image from menu
-→ Put wallpapers in: ~/.config/wallpapers
+## 🖼️ **WALLPAPER MANAGEMENT**
 
-🎲 Randomizer (WIN + R)
-→ Picks a random wallpaper automatically
+- 🎨 **Static Picker (WIN + W)**  
+  → Pick an image from menu  
+  → Folder: `~/.config/wallpapers`
 
-🎥 Start Live Wallpaper (WIN + ALT + K)
-→ Starts .mp4 wallpapers
-→ Folder: ~/.config/Live Wallpapers
+- 🎲 **Randomizer (WIN + R)**  
+  → Picks a random wallpaper automatically  
 
-🔁 Switch Live Wallpaper (WIN + K)
-→ Smoothly switches between videos
+- 🎥 **Start Live Wallpaper (WIN + ALT + K)**  
+  → Starts `.mp4` video wallpapers  
+  → Folder: `~/.config/Live Wallpapers`
 
-⚡ Mode Switching
-→ Using WIN + W automatically stops video wallpaper
+- 🔁 **Switch Live Wallpaper (WIN + K)**  
+  → Smoothly switches between wallpapers  
 
-🖥️ MONITOR SETTINGS (VERY IMPORTANT)
+- ⚡ **Mode Switching**  
+  → Using `WIN + W` **automatically stops video wallpaper**
 
-⚠️ Default monitor = DP-1
+---
 
-If something looks broken:
+## 🖥️ **MONITOR SETTINGS (VERY IMPORTANT)**
 
-👉 Screen black OR Waybar bug
+> ⚠️ **Default monitor = `DP-1`**
 
-✔️ Fix:
-Run: hyprctl monitors
-Find your monitor name (example: HDMI-A-1)
-Open:
-~/.config/hypr/configs/monitors.conf
-Replace:
-DP-1 → YOUR MONITOR NAME
-⌨️ KEYBINDINGS
+If you have problems (black screen / Waybar issues):
 
-🔒 WIN + L → Lock Screen
-🔍 WIN + A → App Launcher
-❌ WIN + Q → Close Window
-🛸 WIN + F → Floating Mode
+1. Run:
+   ```bash
+   hyprctl monitors
+   ```
+2. Find your monitor name (example: `HDMI-A-1`)  
+3. Open:
+   ```
+   ~/.config/hypr/configs/monitors.conf
+   ```
+4. Replace:
+   ```
+   DP-1 → YOUR MONITOR NAME
+   ```
 
-🔢 WIN + 1 / 2 / 3 / 4 → Workspaces
-🚚 WIN + SHIFT + Number → Move Window
+---
 
-🚀 INSTALLATION
+## ⌨️ **KEYBINDINGS**
 
-👉 Follow these steps IN ORDER
+- 🔒 **WIN + L** → Lock Screen  
+- 🔍 **WIN + A** → App Launcher  
+- ❌ **WIN + Q** → Close Window  
+- 🛸 **WIN + F** → Floating Mode  
 
-📥 1. Clone the Repository
+- 🔢 **WIN + 1 / 2 / 3 / 4** → Workspaces  
+- 🚚 **WIN + SHIFT + Number** → Move Window  
 
+---
+
+## 🚀 **INSTALLATION**
+
+> 📌 **Follow these steps IN ORDER**
+
+---
+
+### 📥 **1. Clone the Repository**
+```bash
 git clone https://github.com/L3yzs/By-LeyzS-Arch-Hyprland-Dotfiles.git
-
 cd By-LeyzS-Arch-Hyprland-Dotfiles
+```
 
-📂 2. Copy Config Files
+---
 
-👉 Moves everything into your .config folder
+### 📂 **2. Copy Config Files**
+```bash
+cp -r .config/* ~/.config/
+```
 
-cp -r .config/ ~/.config/*
+---
 
-🪄 3. Fix User Paths (IMPORTANT)
-
-👉 This replaces leyzs → your username automatically
-
+### 🪄 **3. Fix User Paths (IMPORTANT)**
+```bash
 find ~/.config/ -type f -exec sed -i "s/leyzs/$(whoami)/g" {} +
+```
 
-⚠️ NOTE (READ THIS)
+> ✨ This command automatically replaces `leyzs` with your username  
+> and fixes all paths so everything works correctly.
 
-✨ This command will:
+---
 
-Scan all .config files
-Fix paths automatically
-Ensure wallpapers & themes work correctly
+💙 **Made by L€yzS**
