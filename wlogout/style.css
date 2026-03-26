@@ -1,0 +1,65 @@
+/* * 🌌 L€yzS Ricing - Premium Wlogout Interface 🌌
+ * 🛠️  Architected by L€yzS
+ * 🎨  Vertical Card Design & Dynamic Color Integration.
+ */
+
+/* [TR] Pywal renklerini sisteme bağlayan sihirli satır */
+/* [EN] Magic line connecting Pywal colors to the system */
+@import url("file:///home/leyzs/.cache/wal/colors-waybar.css");
+
+/* [TR] Genel Ayarlar / [EN] Global Settings */
+* {
+    background-image: none;
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
+    /* [TR] Akışkan geçiş animasyonu / [EN] Fluid transition animation */
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* [TR] Arka plan - Bulanık kilit ekranı efekti */
+/* [EN] Background - Blurred lock screen effect */
+window {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* --- [TR] DİKEY KART TASARIMI / [EN] VERTICAL CARD DESIGN --- */
+button {
+    border-radius: 20px;
+    margin: 10px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    
+    /* [TR] Dev dikey kartlar / [EN] Giant vertical cards */
+    min-height: 450px;
+    min-width: 100px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    outline-style: none;
+}
+
+/* [TR] İlk açılıştaki o otomatik seçilme (beyaz çerçeve) etkisini burası sıfırlıyor */
+/* [EN] This resets the automatic selection (white border) effect on initial open */
+button:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    outline-style: none;
+}
+
+/* [TR] SADECE fareyle üstüne gelince parlaması için bunu kullanıyoruz */
+/* [EN] Used ONLY for the glow effect when hovering with the mouse */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff;
+    background-size: 35%; /* [TR] İkonun büyüme efekti / [EN] Icon grow effect */
+}
+
+/* --- [TR] İKON YOLLARI / [EN] ICON PATHS --- */
+/* [TR] Tam dosya yolları kullanıldı / [EN] Full file paths used */
+#lock     { background-image: image(url("/home/leyzs/.config/wlogout/icons/lock.png")); }
+#logout   { background-image: image(url("/home/leyzs/.config/wlogout/icons/logout.png")); }
+#suspend  { background-image: image(url("/home/leyzs/.config/wlogout/icons/sleep.png")); }
+#shutdown { background-image: image(url("/home/leyzs/.config/wlogout/icons/power.png")); }
+#reboot   { background-image: image(url("/home/leyzs/.config/wlogout/icons/restart.png")); }

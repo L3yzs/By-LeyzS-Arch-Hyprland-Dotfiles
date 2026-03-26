@@ -1,0 +1,69 @@
+/* * 🌌 L€yzS Ricing - Premium Wlogout Interface 🌌
+ * 🛠️  Architected by L€yzS
+ * 🎨  Vertical Card Design & Dynamic Color Integration.
+ *
+ * [TR] Bu dosya kapatma menüsünün görsel ruhudur. Renkler Pywal'dan akar.
+ * [EN] This file is the visual soul of the logout menu. Colors flow from Pywal.
+ */
+
+/* 🪄 [TR] RENK SİHRİ: Pywal renklerini sisteme bağlayan kutsal satır. */
+/* 🪄 [EN] COLOR MAGIC: The sacred line connecting Pywal colors to the system. */
+@import url("file:///$HOME/.cache/wal/colors-waybar.css");
+
+/* 🛠️ [TR] GENEL AYARLAR / [EN] GLOBAL SETTINGS */
+* {
+    background-image: none;
+    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font";
+    /* [TR] Akışkan geçiş animasyonu / [EN] Fluid transition animation */
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* 🛸 [TR] ANA PENCERE: Tamamen şeffaf, Hyprland blur efektine izin verir. */
+/* 🛸 [EN] MAIN WINDOW: Completely transparent, allows Hyprland blur effect. */
+window {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+/* --- 🧊 VERTICAL CARD DESIGN / DİKEY KART TASARIMI --- */
+button {
+    border-radius: 20px; /* [TR] Yumuşak kavisler / [EN] Soft curves */
+    margin: 10px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+
+    /* [TR] Dev dikey kartlar / [EN] Giant vertical cards */
+    min-height: 450px;
+    min-width: 100px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    outline-style: none;
+}
+
+/* 🎯 [TR] ODAK SIFIRLAMA: İlk açılıştaki o istenmeyen beyaz çerçeveyi öldürür. */
+/* 🎯 [EN] FOCUS RESET: Kills that unwanted white border on initial open. */
+button:focus {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    outline-style: none;
+}
+
+/* ✨ [TR] ETKİLEŞİM: Fareyle üstüne gelince ikon büyür ve parlar. */
+/* ✨ [EN] INTERACTION: Icon grows and glows on hover. */
+button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #ffffff;
+    background-size: 35%; /* [TR] İkonun büyüme efekti / [EN] Icon grow effect */
+}
+
+/* --- 🖼️ ICON PATHS / İKON YOLLARI --- */
+/* [TR] İkonların evrensel yolları (Kullanıcı adı bağımsız) */
+/* [EN] Universal icon paths (User independent) */
+#lock     { background-image: image(url("$HOME/.config/wlogout/icons/lock.png")); }
+#logout   { background-image: image(url("$HOME/.config/wlogout/icons/logout.png")); }
+#suspend  { background-image: image(url("$HOME/.config/wlogout/icons/sleep.png")); }
+#shutdown { background-image: image(url("$HOME/.config/wlogout/icons/power.png")); }
+#reboot   { background-image: image(url("$HOME/.config/wlogout/icons/restart.png")); }

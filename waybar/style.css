@@ -1,0 +1,142 @@
+/* * 🌌 L€yzS Ricing - The Ultimate Waybar Architecture 🌌
+ * 🛠️  Designed & Crafted by L€yzS
+ * 🚀  A dynamic, modern, and pixel-perfect UI for Arch + Hyprland.
+ *
+ * [TR] Bu bar, sistemin dış dünyayla konuşan arayüzüdür. Her piksel akıcılık için tasarlandı.
+ * [EN] This bar is the interface through which the system speaks to the world. Every pixel is designed for fluidity.
+ */
+
+/* 🎨 DYNAMIC COLOR ENGINE / DİNAMİK RENK MOTORU */
+/* [TR] Duvar kağıdına göre renkleri otomatik senkronize eden Pywal/Matugen bağlantısı. */
+/* [EN] Pywal/Matugen connection that automatically synchronizes colors based on the wallpaper. */
+@import "../../.cache/wal/colors-waybar.css";
+
+/* 🛠️ GLOBAL STYLING / GENEL STİL */
+* {
+    /* [TR] Okunabilirlik ve estetik için en iyi font kombinasyonu. */
+    /* [EN] The best font combination for readability and aesthetics. */
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-weight: bold;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🛸 MAIN BAR CONTAINER / ANA BAR GÖVDESİ */
+window#waybar {
+    /* [TR] Pencerelerin havada süzülme efektini korumak için tamamen şeffaf arka plan. */
+    /* [EN] Completely transparent background to maintain the floating window effect. */
+    background: transparent;
+}
+
+/* --- 🧊 WORKSPACES / ÇALIŞMA ALANLARI --- */
+#workspaces button {
+    background-color: @background;
+    color: @foreground;
+    border-radius: 50%; /* [TR] Modern dairesel tasarım / [EN] Modern circular design */
+    margin: 5px 4px;
+    padding: 0;
+    min-width: 23px;
+    min-height: 23px;
+    font-size: 15px;
+    font-weight: 800;
+    border: 2px solid @color9; /* [TR] Vurgu rengi zırhı / [EN] Accent color armor */
+    
+    box-shadow: none;
+    outline: none;
+    /* [TR] Pürüzsüz geçiş için özel eğri / [EN] Special curve for smooth transitions */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button.active {
+    background-color: @color9;
+    color: @background;
+    border: 2px solid @color9; 
+    
+    /* [TR] Aktif butonda kaymayı (shifting) önlemek için sabit border stratejisi. */
+    /* [EN] Constant border strategy to prevent shifting on active buttons. */
+    box-shadow: none;
+    outline: none;
+    background-clip: border-box;
+    -gtk-outline-radius: 50%;
+}
+
+#workspaces button:hover {
+    background-color: @foreground;
+    color: @background;
+    border: 2px solid @foreground;
+}
+
+/* --- 💎 SYSTEM MODULES / SİSTEM MODÜLLERİ --- */
+#clock, 
+#pulseaudio, 
+#tray, 
+#cpu, 
+#memory, 
+#custom-headset, 
+#custom-notification, 
+#custom-media {
+    background-color: @background; 
+    color: @foreground;
+    border-radius: 15px; /* [TR] Yumuşak kavisli köşeler / [EN] Soft curved corners */
+    padding: 0px 10px;
+    margin: 5px 2px; 
+    border: 2px solid @color9;
+    transition: all 0.3s ease;
+}
+
+/* 🎧 HEADSET (SteelSeries) SPECIAL TUNING */
+#custom-headset {
+    padding: 0px 9px;
+    /* [TR] İkonun dikey hizasını korumak için milimetrik ayar. */
+    /* [EN] Millimetric adjustment to maintain the icon's vertical alignment. */
+    margin-top: 5px; 
+    margin-bottom: 5px;
+}
+
+#custom-notification {
+    padding: 0px 13px 0px 11px; 
+}
+
+/* ⚡ VISUAL SEPARATOR / GÖRSEL AYIRICI */
+#custom-separator {
+    color: @color9;      
+    font-size: 23px;
+    padding: 0;      
+    margin: 0px -2px;
+    background: transparent;
+}
+
+/* 🛑 POWER MENU / GÜÇ MENÜSÜ */
+#custom-power {
+    background-color: @background;
+    color: @color9;            
+    border: 2px solid @color9; 
+    border-radius: 50%;
+    min-width: 25px;
+    min-height: 25px;
+    font-size: 13px;
+    margin: 4px 10px 5px 5px;
+    padding-right: 2px; 
+    transition: all 0.3s ease;
+}
+
+#custom-power:hover {
+    background-color: @color9;
+    color: @background;
+    border: 2px solid @background;
+}
+
+/* --- 🌈 INTERACTIVE HOVER EFFECTS --- */
+#clock:hover, 
+#pulseaudio:hover, 
+#custom-headset:hover, 
+#tray:hover, 
+#memory:hover, 
+#cpu:hover, 
+#custom-notification:hover {
+    /* [TR] Fare ile etkileşim anında renk değişimi. */
+    /* [EN] Color swap during mouse interaction. */
+    background-color: @color9;
+    color: @background;
+}

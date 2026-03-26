@@ -1,0 +1,65 @@
+@import url('/home/leyzs/.cache/wal/colors-waybar.css');
+
+/* Ana Pencere */
+window {
+  margin: 0px;
+  border: 2px solid @color2;
+  border-radius: 12px;
+  /* Blur etkisinin arkadan görünmesi için opacity'yi 0.6 yaptım */
+  background-color: rgba(0, 0, 0, 0.85);
+  font-family: "JetBrains Mono", monospace;
+  color: #ffffff;
+}
+
+/* Arama Kutusu */
+#input {
+  margin: 10px;
+  border: 1px solid @color2;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+#input::placeholder { color: #ffffff; opacity: 0.5; }
+#input:focus { color: #ffffff; outline: none; }
+#prompt { color: #ffffff; margin-right: 5px; }
+
+/* Liste Elemanları */
+#text {
+  margin: 5px;
+  border: none;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* --- Seçme Kutucuğu --- */
+#entry:selected {
+  background-color: @color2;
+  border-radius: 8px;
+  /* Yumuşak geçiş efekti */
+  transition: all 0.2s ease-in-out;
+}
+
+#entry:selected #text {
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Mouse ile üzerine gelindiğinde */
+#entry:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* İkonlar (Eğer varsa) */
+#img {
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* Diğer kutu ayarları */
+#inner-box { margin: 5px; border: none; padding: 5px; }
+#outer-box { margin: 5px; border: none; padding: 5px; }
+#scroll { margin: 0px; }

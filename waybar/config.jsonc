@@ -1,0 +1,132 @@
+{
+    /* * 🌌 L€yzS Ricing - Waybar Configuration 🌌
+     * 🛠️  Architected by L€yzS
+     * 🖥️  Output: DP-1 | Setup: Floating Top Bar
+     */
+
+    "reload_config_on_change": false,
+    "reload_style_on_change": true,
+    "layer": "top",
+    "output": "DP-1",
+    "position": "top",
+    "height": 38,
+    "margin-top": -27,
+    "margin-left": 50,
+    "margin-right": 50,
+    "spacing": 10,
+    "mod": "dock",
+    "exclusive": false,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+
+    /* [TR] Modül Dizilimleri / [EN] Module Layouts */
+    "modules-left": ["clock", "pulseaudio", "custom/media"],    
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "tray", 
+        "cpu", 
+        "memory", 
+        "custom/separator", 
+        "custom/headset", 
+        "custom/notification", 
+        "custom/power"
+    ],
+
+    /* [TR] Saat ve Tarih / [EN] Clock & Date */
+    "clock": {
+        "format": " {:%H:%M:%S %p}",
+        "interval": 1
+    },
+
+    /* [TR] Ses Kontrolü / [EN] Audio Control */
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": { "default": ["", "", ""] },
+        "on-click": "pavucontrol"
+    },
+
+    /* [TR] Çalışma Alanları / [EN] Workspaces */
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "1": [], "2": [], "3": [], "4": []
+        }
+    },
+
+    /* [TR] Sistem Tepsisi / [EN] System Tray */
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    /* [TR] İşlemci Kullanımı / [EN] CPU Usage */
+    "cpu": {
+        "interval": 1,
+        "format": " {usage}%",
+        "on-click": "tilix -e btop"
+    },
+
+    /* [TR] Bellek Kullanımı / [EN] Memory Usage */
+    "memory": {
+        "interval": 1, 
+        "format": "  {used:0.1f}G/{total:0.1f}G", 
+        "on-click": "tilix -e btop"
+    },
+
+    /* [TR] Ayırıcı Çizgi / [EN] Visual Separator */
+    "custom/separator": { "format": "|" },
+
+    /* [TR] Arctis Nova 5 Pil Göstergesi / [EN] Arctis Nova 5 Battery Indicator */
+    "custom/headset": {
+        "format": "󰋋 {icon} {text}%",
+        "format-icons": ["", "", "", "", ""],
+        "return-type": "json",
+        "exec": "val=$(headsetcontrol -b | grep -oP 'Level: \\K\\d+'); if [ -z \"$val\" ]; then echo '{\"text\": \"0\", \"percentage\": 0}'; else echo \"{\\\"text\\\": \\\"$val\\\", \\\"percentage\\\": $val}\"; fi",
+        "interval": 30,
+        "tooltip": true,
+        "tooltip-format": "SteelSeries Arctis Nova 5",
+        "on-click": "headsetcontrol -b"
+    },
+
+    /* [TR] Bildirim Merkezi (SwayNC) / [EN] Notification Center (SwayNC) */
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        }, 
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    }, 
+
+    /* [TR] Güç Menüsü (Wlogout) / [EN] Power Menu (Wlogout) */
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout -b 5 -c 0 -p layer-shell",
+        "tooltip": false
+    },
+
+    /* [TR] Medya Oynatıcı Kontrolü / [EN] Media Player Control */
+    "custom/media": {
+        "format": "<span color='#1DB954'></span>  {}", 
+        "max-length": 40,
+        "interval": 1,
+        "exec": "playerctl metadata --format '{{ artist }} - {{ title }}'",
+        "on-click": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous"
+    }
+}
