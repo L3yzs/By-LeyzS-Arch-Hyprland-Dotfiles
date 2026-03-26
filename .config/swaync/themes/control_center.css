@@ -1,0 +1,97 @@
+/* * 🌌 L€yzS Ricing - Control Center Master UI 🌌
+ * 🛠️  Architected by L€yzS
+ * 🎨  Symmetry, Precision & Dynamic @color9 Accents.
+ *
+ * [TR] Bu dosya sağ panelin (Control Center) tüm iç yapısını ve butonlarını şekillendirir.
+ * [EN] This file shapes the entire internal structure and buttons of the Control Center.
+ */
+
+/* ============================================================
+   1. MAIN PANEL (Outer Frame) / ANA PANEL (Dış Çerçeve)
+   ============================================================ */
+.control-center {
+    /* [TR] %92 opaklık ile derinlik hissi / [EN] Depth effect with 92% opacity */
+    background-color: rgba(0, 0, 0, 0.92);
+    border: 2px solid @color9; /* [TR] Vurgu rengi! / [EN] Accent color! 🔴 */
+    border-radius: 25px;
+    margin: 15px;
+    padding: 15px;
+}
+
+/* ============================================================
+   2. TOP BUTTONS (Symmetric Grid) / ÜST BUTONLAR (Simetrik Dizilim) 📏
+   ============================================================ */
+.widget-buttons-grid {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid @color9;
+    border-radius: 12px;
+    padding: 10px;
+    margin: 10px 5px;
+}
+
+.widget-buttons-grid > box {
+    justify-content: center; /* [TR] Merkeze toplamayı zorla / [EN] Force center alignment */
+}
+
+.widget-buttons-grid button {
+    background: transparent;
+    color: @foreground;
+    font-size: 18px;
+    padding: 10px;
+    /* [TR] Merkeze yakın toplu dizilim / [EN] Compact centered alignment */
+    margin: 0 22px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+    border: none;
+}
+
+.widget-buttons-grid button:hover {
+    color: @color9;
+    transform: scale(1.2); /* [TR] Hoverda ikon büyümesi / [EN] Icon grow on hover */
+}
+
+/* ============================================================
+   3. MEDIA PLAYER (MPRIS) / MEDYA OYNATICI 📦
+   ============================================================ */
+.widget-mpris {
+    min-width: 5px; 
+    background: transparent !important;
+    padding: -5px;
+    margin: -5px;
+}
+
+/* ============================================================
+   4. TITLES & PLACEHOLDERS / BAŞLIKLAR VE YER TUTUCULAR
+   ============================================================ */
+.widget-title, .widget-dnd {
+    font-size: 2px; /* [TR] Minimalist gizli başlıklar / [EN] Minimalist hidden titles */
+    color: @color7;
+    margin: 1px 1px;
+}
+
+/* [TR] Hiç bildirim yokken çıkan o dev estetik çan / [EN] Large aesthetic bell for empty state */
+.placeholder > label {
+    font-size: 50px;
+    color: @color9;
+    opacity: 0.4;
+}
+
+/* ============================================================
+   5. DO NOT DISTURB (DND) SWITCH / RAHATSIZ ETME ANAHTARI
+   ============================================================ */
+.widget-dnd switch {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 999px;
+}
+
+.widget-dnd switch:checked {
+    background: @color9 !important; /* [TR] Aktifken Pywal rengi / [EN] Pywal color when active */
+}
+
+.widget-dnd switch slider {
+    background-color: @foreground !important;
+    border-radius: 999px;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 2px;
+}

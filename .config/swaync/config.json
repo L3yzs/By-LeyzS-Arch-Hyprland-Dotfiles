@@ -1,0 +1,62 @@
+{
+  /* * 🌌 L€yzS Ricing - SwayNC Global Controller 🌌
+   * 🛠️  Architecture by L€yzS
+   * 🔔  Pixel-perfect notification management and quick actions.
+   *
+   * [TR] Bildirimlerin davranışlarını ve sağ paneldeki hızlı erişim butonlarını yönetir.
+   * [EN] Manages notification behavior and quick access buttons in the right panel.
+   */
+
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 15,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 15,
+  "control-center-width": 380,
+  "control-center-height": 0,
+  "layer": "overlay",
+  "cssPriority": "user",
+
+  /* --- 🧱 WIDGET ORDER / MODÜL SIRALAMASI --- */
+  "widgets": [
+      "buttons-grid",   // [TR] Hızlı butonlar / [EN] Action buttons
+      "mpris",          // [TR] Müzik çalar / [EN] Music player
+      "dnd",            // [TR] Rahatsız etme / [EN] Do not disturb
+      "title",          // [TR] Başlık alanı / [EN] Title area
+      "notifications"   // [TR] Bildirim akışı / [EN] Notification stream
+  ],
+
+  "widget-config": {
+      "title": {
+          "text": "Notifications",
+          "clear-all-button": true,
+          "button-text": "󰎟"
+      },
+      "dnd": {
+          "text": "Do Not Disturb"
+      },
+      "mpris": {
+          "image-size": 40,
+          "image-radius": 8,
+          "max-visible": 1,
+          /* [TR] Gereksiz oynatıcıları listeden temizler / [EN] Hides unnecessary players */
+          "ignore-player": ["helium-browser", "Helium", "chromium"]
+      },
+      "buttons-grid": {
+          "actions": [
+              /* 󰐥 [TR] Güç Menüsü / [EN] Power Menu */
+              { "label": "󰐥", "command": "wlogout -b 5 -c 0 -p layer-shell" },
+              /* 󰝟 [TR] Ses Kapat-Aç / [EN] Toggle Mute */
+              { "label": "󰝟", "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle" },
+              /* 󰍃 [TR] Oturumu Kapat / [EN] Logout */
+              { "label": "󰍃", "command": "hyprctl dispatch exit" },
+              /* 󰌾 [TR] Sistemi Kilitle / [EN] Lock System */
+              { "label": "󰌾", "command": "hyprlock" }
+          ]
+      }
+  }
+}

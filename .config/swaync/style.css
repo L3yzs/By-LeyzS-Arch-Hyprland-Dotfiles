@@ -1,0 +1,40 @@
+/* * 🌌 L€yzS Ricing - SwayNC Motion Aesthetics 🌌
+ * 🛠️  Engineered by L€yzS
+ * 🎬  Smooth Slide-In Animations & Modular Theme Architecture.
+ *
+ * [TR] Bu dosya bildirim merkezinin giriş animasyonunu ve tema modüllerini yönetir.
+ * [EN] This file manages the entry animation and theme modules of the notification center.
+ */
+
+/* 🎬 1️⃣ [TR] GİRİŞ ANİMASYONU: Sağdan akıcı bir kayma efekti. */
+/* 🎬 1️⃣ [EN] ENTRY ANIMATION: Fluid slide-in effect from the right. */
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.control-center {
+    /* [TR] 0.2 saniyelik profesyonel hız / [EN] 0.2s professional speed */
+    animation: slideInRight 0.2s ease-out forwards;
+}
+
+/* 🎨 2️⃣ [TR] RENK VE MODÜLER TEMALAR / [EN] COLOR & MODULAR THEMES */
+
+/* [TR] Pywal Sihri: Tüm sistemi duvar kağıdına bağlayan köprü. */
+/* [EN] Pywal Magic: The bridge connecting the system to the wallpaper. */
+@import "../../.cache/wal/colors-waybar.css"; 
+
+/* [TR] Modüler tasarım: Karmaşayı önlemek için alt temaları çağırıyoruz. */
+/* [EN] Modular design: Importing sub-themes to prevent clutter. */
+@import "themes/control_center.css";
+@import "themes/notifications.css";
+
+/* * 💡 [TR] İPUCU: control_center.css içindeki arka planları @background 
+ * veya @color9 kullanarak Pywal ile tam uyumlu hale getirmeyi unutma!
+ */
