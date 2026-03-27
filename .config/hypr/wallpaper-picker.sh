@@ -13,7 +13,7 @@ WALL_DIR="/home/leyzs/.config/Live Wallpapers"
 TEMP_THUMB="/tmp/wall_thumb.png"
 
 # [TR] WOFI: Seçim menüsü / [EN] WOFI: Selection menu
-choice=$(ls "$WALL_DIR" | grep ".mp4" | wofi --dmenu --style "$HOME/.config/wofi/style.css" --prompt "Select Live Wallpaper")
+choice=$(ls "$WALL_DIR" | grep ".mp4" | wofi --dmenu --style "$HOME/.config/wofi/style.css" -->
 
 # [TR] Seçim yoksa çık / [EN] Exit if no choice
 [ -z "$choice" ] && exit 1
@@ -33,24 +33,17 @@ pkill mpvpaper || true
 mpvpaper -o "--loop --hwdec=auto-safe --no-audio" DP-1 "$VIDEO_PATH" &
 mpvpaper -o "--loop --hwdec=auto-safe --no-audio --panscan=1.0" HDMI-A-1 "$VIDEO_PATH" &
 
-# 🌈 4️⃣ [TR] L€yzS SİSTEM SENKRONİZASYONU (Tıp Tıp)
-# 🌈 4️⃣ [EN] L€yzS SYSTEM SYNC (The Sequence)
 (
-    # [TR] Bildirimleri hazırla / [EN] Prep notifications
     if command -v swaync-client >/dev/null 2>&1; then
         swaync-client -R && swaync-client -rs
     fi
 
-    sleep 0.001
-
-    # [TR] PYWAL: Renkleri videonun karesine göre tüm sisteme yay.
-    # [EN] PYWAL: Spread colors across the system based on the video frame.
+    sleep 0.60
     if command -v wal >/dev/null 2>&1; then
         wal -i "$TEMP_THUMB" -n -q -t -e
         cp "$TEMP_THUMB" "$HOME/.cache/current_wallpaper.png"
     fi
 
-    # [TR] Final senkronizasyon / [EN] Final synchronization
     if command -v swaync-client >/dev/null 2>&1; then
         swaync-client -R && swaync-client -rs
     fi
