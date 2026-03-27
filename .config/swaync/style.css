@@ -1,0 +1,20 @@
+/* 1. Animasyon */
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.control-center {
+    animation: slideInRight 0.2s ease-out forwards;
+}
+
+/* 2. RENK VE TEMA DOSYALARI */
+@import "../../.cache/wal/colors-waybar.css"; /* Bu ana pywal dosyan */
+@import "themes/control_center.css";
+@import "themes/notifications.css";

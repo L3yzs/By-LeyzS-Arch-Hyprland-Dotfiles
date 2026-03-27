@@ -1,0 +1,46 @@
+{
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 15,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-right": 15,
+  "control-center-width": 380,
+  "control-center-height": 0,
+  "layer": "overlay",
+  "cssPriority": "user",
+  "widgets": [
+      "buttons-grid",
+      "mpris",
+      "dnd",
+      "title",
+      "notifications"
+  ],
+  "widget-config": {
+      "title": {
+          "text": "Notifications",
+          "clear-all-button": true,
+          "button-text": "󰎟"
+      },
+      "dnd": {
+          "text": "Do Not Disturb"
+      },
+      "mpris": {
+          "image-size": 40,
+          "image-radius": 8,
+          "max-visible": 1,
+          "ignore-player": ["helium-browser", "Helium", "chromium"]
+      },
+      "buttons-grid": {
+          "actions": [
+              { "label": "󰐥", "command": "wlogout -b 5 -c 0 -p layer-shell" },
+              { "label": "󰝟", "command": "pactl set-sink-mute @DEFAULT_SINK@ toggle" },
+              { "label": "󰍃", "command": "hyprctl dispatch exit" },
+              { "label": "󰌾", "command": "hyprlock" }
+          ]
+      }
+  }
+}
