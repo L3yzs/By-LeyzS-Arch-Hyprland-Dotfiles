@@ -110,4 +110,4 @@ find ~/.config/ -type f -exec sed -i "s/leyzs/$(whoami)/g" {} +
 
 ---
 
-🐧🤍 **Made by LeyzS**
+New update is coming this week or next week! Stay tuned.
