@@ -110,4 +110,4 @@ find ~/.config/ -type f -exec sed -i "s/leyzs/$(whoami)/g" {} +
 
 ---
 
-New update is coming this week or next week! Stay tuned.
+Added new animations. Enjoy!
