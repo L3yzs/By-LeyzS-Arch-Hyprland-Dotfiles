@@ -2,7 +2,7 @@
   <img src="ss.png" alt="preview" width="800"/>
 </p>
 
-# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V1.0)** 🏁
+# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V1.5)** 🏁
 ---
 
 ## 🚨 **IMPORTANT: MUST INSTALL FIRST**
