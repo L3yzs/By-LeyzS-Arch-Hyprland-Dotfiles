@@ -2,7 +2,7 @@
   <img src="ss.png" alt="preview" width="800"/>
 </p>
 
-# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V1.5)** 🏁
+# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V2.0)** 🏁
 ---
 
 ## 🚨 **IMPORTANT: MUST INSTALL FIRST**
@@ -110,4 +110,4 @@ find ~/.config/ -type f -exec sed -i "s/leyzs/$(whoami)/g" {} +
 
 ---
 
-Added new animations. Enjoy!
+New Swaync settings!!
