@@ -1,7 +1,8 @@
+<p align="center">📸 Screenshot</p>
+
 <p align="center">
   <img src="ss.png" alt="preview" width="800"/>
 </p>
-
 # 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V2.0)** 🏁
 ---
 
