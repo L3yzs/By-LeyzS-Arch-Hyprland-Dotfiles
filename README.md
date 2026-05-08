@@ -12,7 +12,7 @@
 
 ---
 
-### ⚙️ **What you need to download**
+### ⚙️ **What You Need To Download**
 ```bash
 waybar wofi wlogout kitty fastfetch swww swaync hyprlock pywal16 mpvpaper grimblast
 ```
