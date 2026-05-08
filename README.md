@@ -99,5 +99,3 @@ find ~/.config/ -type f -exec sed -i "s/leyzs/$(whoami)/g" {} +
 > and fixes all paths so everything works correctly.
 
 ---
-
-New Swaync settings!!
