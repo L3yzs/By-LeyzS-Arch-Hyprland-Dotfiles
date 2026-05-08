@@ -12,18 +12,10 @@
 
 ---
 
-### ⚙️ **Core Components & Visuals**
+### ⚙️ **What you need to download**
 ```bash
-sudo pacman -S hyprland waybar wofi wlogout kitty fastfetch swww swaync hyprlock pywal16 mpvpaper grim slurp wl-clipboard
+waybar wofi wlogout kitty fastfetch swww swaync hyprlock pywal16 mpvpaper grimblast
 ```
-
-### 🔤 **Fonts & Tools**
-```bash
-yay -S matugen-bin ttf-jetbrains-mono-nerd
-```
-
----
-
 ## 🖼️ **WALLPAPER MANAGEMENT**
 
 - 🎨 **Static Picker (WIN + W)**  
