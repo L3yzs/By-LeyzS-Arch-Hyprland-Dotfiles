@@ -1,4 +1,4 @@
-<h3 align="center">📸 🚀 By-LeyzS Arch + Hyprland Dotfiles (V2.0) 🏁</h3>
+<h3 align="center">🚀 By-LeyzS Arch + Hyprland Dotfiles (V2.0) 🏁</h3>
 
 <p align="center">
   <img src="ss.png" alt="preview" width="800"/>
