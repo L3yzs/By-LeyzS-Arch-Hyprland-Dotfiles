@@ -1,4 +1,4 @@
-<p align="center">📸 Screenshot</p>
+<h3 align="center">📸 Screenshot</h3>
 
 <p align="center">
   <img src="ss.png" alt="preview" width="800"/>
