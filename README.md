@@ -1,11 +1,8 @@
-<h3 align="center">📸 Screenshot</h3>
+<h3 align="center">📸 🚀 By-LeyzS Arch + Hyprland Dotfiles (V2.0) 🏁</h3>
 
 <p align="center">
   <img src="ss.png" alt="preview" width="800"/>
 </p>
-# 🚀 **By-LeyzS Arch + Hyprland Dotfiles (V2.0)** 🏁
----
-
 ## 🚨 **IMPORTANT: MUST INSTALL FIRST**
 
 > ⚠️ **Before copying the files, you MUST install these packages!**  
