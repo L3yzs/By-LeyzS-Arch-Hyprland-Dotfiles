@@ -3,7 +3,7 @@
 <p align="center">
   <img src="ss.png" alt="preview" width="800"/>
 </p>
-## 🚨 **IMPORTANT: MUST INSTALL FIRST**
+🚨 IMPORTANT: MUST INSTALL FIRST
 
 > ⚠️ **Before copying the files, you MUST install these packages!**  
 > Otherwise, the system will NOT work properly.
